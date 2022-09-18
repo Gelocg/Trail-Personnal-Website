@@ -1,0 +1,16 @@
+.marquee {
+    
+    overflow: hidden;
+    display: flex;
+
+    width: 100%;
+
+    h1 {
+        white-space: nowrap;
+
+        text-align: center;
+
+        font-size: 5em;
+        text-transform: uppercase;
+    }
+}

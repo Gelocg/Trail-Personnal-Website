@@ -1,0 +1,18 @@
+.presentation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    height: 100vh;
+
+    @include for-mobile() {
+        height: 60vh;
+    }
+
+    .envelope {
+        margin-top: 20px;
+        i {
+            font-size: 40px;
+        }
+    }
+}

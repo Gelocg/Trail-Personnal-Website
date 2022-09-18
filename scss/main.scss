@@ -1,0 +1,67 @@
+@use "variables" as *;
+@import "resets";
+
+@mixin for-mobile {
+    @media (max-width: 900px) {
+        @content;
+    }
+}
+
+@import "slider";
+
+.dark {
+    background: $text_color;
+    * { color: white; }
+}
+
+body {
+    transition: background .5s ease-in-out;
+}
+
+main {
+    max-width: 950px;
+    margin: 0 auto;
+
+    @import "presentation";
+    @import "projects";
+
+    @include for-mobile() {
+        max-width: 100vw;
+        margin: 0 20px 0 20px;
+    }
+
+    h2 {
+        font-family: Inter, sans-serif;
+        color: $text_color;
+        font-size: 96px;
+        font-weight: 700;
+
+        @include for-mobile() {
+            font-size: 50px;
+        }
+    }
+
+    .orange {
+        font-family: "Times New Roman", Times, serif;
+        font-style: italic;
+        font-weight: 400;
+        letter-spacing: -2px;
+        font-size: 110px;
+        color: $accent_color;
+
+        @include for-mobile() {
+            font-size: 90px;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+}
+
+footer {
+    height: 100px;
+    display: grid;
+    place-items: center;
+}

@@ -1,0 +1,164 @@
+* {
+  box-sizing: border-box !important;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.marquee {
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+}
+.marquee h1 {
+  white-space: nowrap;
+  text-align: center;
+  font-size: 5em;
+  text-transform: uppercase;
+}
+
+.dark {
+  background: #060606;
+}
+.dark * {
+  color: white;
+}
+
+body {
+  transition: background 0.5s ease-in-out;
+}
+
+main {
+  max-width: 950px;
+  margin: 0 auto;
+}
+main .presentation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
+@media (max-width: 900px) {
+  main .presentation {
+    height: 60vh;
+  }
+}
+main .presentation .envelope {
+  margin-top: 20px;
+}
+main .presentation .envelope i {
+  font-size: 40px;
+}
+main .projects {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 80px 80px;
+  grid-template-areas: "one one two" "four three three" "five five sixe";
+  place-items: center;
+}
+@media (max-width: 900px) {
+  main .projects {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    gap: 20px 0;
+    grid-template-areas: "one" "two" "three" "four" "five" "sixe";
+  }
+}
+main .projects .one {
+  grid-area: one;
+}
+main .projects .two {
+  grid-area: two;
+}
+main .projects .three {
+  grid-area: three;
+}
+main .projects .four {
+  grid-area: four;
+}
+main .projects .five {
+  grid-area: five;
+}
+main .projects .sixe {
+  grid-area: sixe;
+}
+main .projects__item {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: all 0.3s cubic-bezier(0.38, 0.01, 0.49, 0.99);
+  color: white;
+  width: 100%;
+  height: 624px;
+  border-radius: 10px;
+  padding: 20px;
+  background: url("https://uploads-ssl.webflow.com/5fb8d374aa2fae32e94982a7/623c34523a9ecd9b1cecd0b2_Kindred.png") center;
+  background-size: cover;
+  background-position: 5% 50%;
+}
+main .projects__item.visible {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: transform 1s cubic-bezier(0.38, 0.01, 0.49, 0.99), opacity 1s cubic-bezier(0.38, 0.01, 0.49, 0.99);
+}
+main .projects__item.visible:nth-child(even) {
+  transition-delay: 0.2s;
+}
+main .projects__item:hover {
+  scale: 1.02;
+}
+@media (max-width: 900px) {
+  main .projects__item:hover {
+    scale: 0.9;
+  }
+}
+main .projects__item h1, main .projects__item p {
+  font-size: 15px;
+  line-height: 25px;
+}
+main .projects__item h1::after {
+  font-family: "Font Awesome 5 Free";
+  vertical-align: 0;
+  margin-left: 20px;
+  content: "\f061";
+}
+@media (max-width: 900px) {
+  main {
+    max-width: 100vw;
+    margin: 0 20px 0 20px;
+  }
+}
+main h2 {
+  font-family: Inter, sans-serif;
+  color: #060606;
+  font-size: 96px;
+  font-weight: 700;
+}
+@media (max-width: 900px) {
+  main h2 {
+    font-size: 50px;
+  }
+}
+main .orange {
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -2px;
+  font-size: 110px;
+  color: #e18f04;
+}
+@media (max-width: 900px) {
+  main .orange {
+    font-size: 90px;
+  }
+}
+main a {
+  text-decoration: none;
+  color: black;
+}
+
+footer {
+  height: 100px;
+  display: grid;
+  place-items: center;
+}/*# sourceMappingURL=main.css.map */
